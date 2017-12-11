@@ -1,0 +1,16 @@
+before_install:
+- sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng texlive-lang-french
+  latexmk
+script:
+- mkdir _build
+- latexmk -pdf -output-directory=_build -jobname=coucheLiaison CoucheLiaison.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: LhY6vQNf8G094h9kpjDk9NlmtkcPJZbLfrnW98rB1nPecuEuUqHEvC/AW9oU1bSb1yX1zAQ2mm8ZjwNGJ5lamhNrFp2ecbZYoQwlBv2YjCi2pj2dhE5XPK9AXAARKrniMAV+8hvrNpWFFKDIS6L73jJMbi2huUr5zJcpaDkQA6LjP+sWt1y5DBW+ArNFqXg7aea0G0Ot9OEoV4qi6AAQYQTNhIAOKztZuM/pwk4AX1IfItly7AEW+wxE19ml/PnA8pQIDo5SUa8/mlDXUJfx7cX1lNFIeCtIV35y8jeCAN9tpci/VWdVBWqkXnxF7naR6Da3gWbvdoN4UU2bVlm2k48TUD7kF//dKt13QaA+v0NI1OE06goRl3NwVeEoR8hfQBeIxDn+m0id4brcDqfkmpGRprwWZ54uRIlgFPcEyaBIjZ0JPrEVOn2BcIlOvPDv3st0V3dGFP1Rp7n9tYTvppsCyo2u9pb3mms0qEenTXWh6k11JUQFfDYgyCpI4MAnzGvCHQYhuI1wXNtDwy2Hr2JHsCNdObeI/9H8PpVF+B6d3FO9ZjRfbLZeveTPVaHp2FR7emKVGIOtar1KB10p5i5MmpR9Vd3yaCh+9GXJ/giwczs+0EwmJEBjUZpBBG2ArRUSd61GqIIXKaJrclmLF5gOu4OZ/ZzxUR5+eq+BI1k=
+  file: CoucheLiaison.pdf
+  skip_cleanup: true
+  on:
+    repo: NBKZiman/CoucheLiaison
+tags: true
