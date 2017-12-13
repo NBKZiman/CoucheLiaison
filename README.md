@@ -1,3 +1,3 @@
 Formation sur la couche liaison présenté au Rézoléo
 
-https://travis-ci.org/NBKZiman/CoucheLiaison.svg?branch=master
+[![Build Status](https://travis-ci.org/NBKZiman/CoucheLiaison.svg?branch=master)](https://travis-ci.org/NBKZiman/CoucheLiaison)
